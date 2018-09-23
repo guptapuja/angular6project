@@ -1,0 +1,72 @@
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal </h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        {{title}}
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row" style="margin-left:15px;margin-right:15px">
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-bottom: 30px ;margin-top:20px" *ngFor="let user of users; let i = index">
+    <div class="box" style="height :220px">
+      <div class="container">
+
+
+        <div class="box-part text-center whitesmoke" style="height :220px;padding-top:20px">
+
+          <div class="row  justify-content-center">
+
+            <span>{{user.title}}</span>&nbsp;
+            <span>
+              <i class="fa" [ngClass]="{'fa-star':user.isFavourite, 'fa-star-o':!user.isFavourite}" [style.color]="getStyle(user._id)" (click)=updateStyle(user._id)></i>
+            </span>
+          </div>
+          <div class="row pl-5">
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" (click)="updateModal(user._id)" data-target="#myModal">
+              Info
+            </button>
+          </div>
+ 
+          <div style="margin-top:10 px;margin-right:410px">
+            <div class="container">
+
+              <!-- Button to Open the Modal -->
+
+
+              <!-- The Modal -->
+
+            </div>
+          </div>
+          <hr>
+
+          <div style="float:right">
+            <button type="submit" class="btn btn-success mr-2" [routerLink]="['/userdetail', user._id]">
+              <i class="icon-circle-arrow-right icon-large"></i> Open
+            </button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

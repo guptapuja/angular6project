@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+/* custom css put hrer */
+
+.temp{
+    border:transparent;
+    border-bottom: 3px solid black;
+    border-radius:0;
+    width :40%!important;
+}
