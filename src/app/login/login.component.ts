@@ -16,7 +16,8 @@ export class  LoginComponent  implements OnInit {
 myForm:FormGroup;
 showStyle:false; 
 users:any = [];
-title:any = "Hi this is othing";
+title:any = "";
+description:any = "";
 constructor(public myservice: myService,private fb :FormBuilder,private router :Router,public el :ElementRef){
 
 
@@ -75,6 +76,7 @@ console.log(_id);
 for(var i =0; i <this.users.length;i++){
   if(this.users[i]._id == _id){
     this.title = this.users[i].title;
+    this.description = this.users[i].description;
   }
 }
 }
